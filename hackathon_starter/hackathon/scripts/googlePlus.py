@@ -7,7 +7,7 @@ import string
 
 AUTHORISE_URL = 'https://accounts.google.com/o/oauth2/auth'
 ACCESS_TOKEN_URL = 'https://accounts.google.com/o/oauth2/token'
-REDIRECT_URL = 'http://localhost:8000/hackathon/'
+REDIRECT_URL = 'http://localhost:8000/'
 PROFILE_API = 'https://www.googleapis.com/auth/plus.login'
 
 class GooglePlus:
@@ -82,7 +82,7 @@ class GooglePlus:
 		                'code':code,
 		                'grant_type':'authorization_code', 
 		                'client_id': self.client_id,
-		                'redirect_uri': 'http://localhost:8000/hackathon/'}
+		                'redirect_uri': 'http://localhost:8000/'}
 
 		response = requests.post(ACCESS_TOKEN_URL, data=authSettings)
 		if response.status_code != 200:

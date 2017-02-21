@@ -39,6 +39,10 @@ getGoogle = GooglePlus(settings.GOOGLE_PLUS_APP_ID, settings.GOOGLE_PLUS_APP_SEC
 
 
 
+def search_results(request):
+    return render(request, 'search_results.html', locals())
+
+
 ##################
 #   Index Page   #
 ##################
@@ -122,7 +126,7 @@ def index(request):
                     profile = TwitterProfile(user = user, oauth_token = getTwitter.oauth_token, oauth_token_secret= getTwitter.oauth_token_secret, twitter_user=getTwitter.username)
                     profile.save()
     context = {'hello': 'world'}
-    return render(request, 'hackathon/index.html', context)
+    return render(request, 'index.html', context)
 
 
 ##################
@@ -131,7 +135,7 @@ def index(request):
 
 def about(request):
     context = {'title': 'About OpenStay'}
-    return render(request, 'hackathon/about.html', context)
+    return render(request, 'about.html', context)
 
 ##################
 #  API Examples  #
@@ -139,7 +143,7 @@ def about(request):
 
 def api_examples(request):
     context = {'title': 'API Examples Page'}
-    return render(request, 'hackathon/api_examples.html', context)
+    return render(request, 'api_examples.html', context)
 
 
 ########################
@@ -148,7 +152,7 @@ def api_examples(request):
 
 def host(request):
     context = {'title': 'host with OpenStay'}
-    return render(request, 'hackathon/host.html', context)
+    return render(request, 'host.html', context)
     
 ########################
 #   code of conduct    #
@@ -156,7 +160,7 @@ def host(request):
 
 def code_of_conduct(request):
     context = {'title': 'OpenStay Code Of Conduct'}
-    return render(request, 'hackathon/CodeOfConduct.html', context)
+    return render(request, 'CodeOfConduct.html', context)
 
 ########################
 #     Contact info     #
@@ -164,7 +168,7 @@ def code_of_conduct(request):
 
 def contact_us(request):
     context = {'title': 'Contact Openstay'}
-    return render(request, 'hackathon/contact.html', context)
+    return render(request, 'contact.html', context)
 
 ########################
 #     pivacy policy    #
@@ -172,7 +176,7 @@ def contact_us(request):
 
 def privacy_policy(request):
     context = {'title': 'OpenStay Privacy policy'}
-    return render(request, 'hackathon/privacy.html', context)
+    return render(request, 'privacy.html', context)
 
 ########################
 #    Terms of service  #
@@ -180,7 +184,7 @@ def privacy_policy(request):
 
 def terms_of_service(request):
     context = {'title': 'OpenStay ToS'}
-    return render(request, 'hackathon/terms.html', context)
+    return render(request, 'terms.html', context)
 
 
 #########################
@@ -189,7 +193,7 @@ def terms_of_service(request):
 
 def travelers_promise(request):
     context = {'title': 'The Travelers Promise'}
-    return render(request, 'hackathon/travelerspromise.html', context)
+    return render(request, 'travelerspromise.html', context)
 
 ##################
 #   userpage     #
@@ -230,7 +234,7 @@ def userpage(request):
         listofattractions.append(attractions[n]['name'])
     context = {'username': name, 'location': location, 'yelp': listofattractions,
                'interests': interests, 'accomodation': accomodation}
-    return render(request, 'hackathon/userpage.html', context)
+    return render(request, 'userpage.html', context)
 
 
 #################
@@ -245,7 +249,7 @@ def searchEngine(request):
     listofusers = []
     for u in user:
         listofusers.append(u)
-    return render(request, 'hackathon/search.html', { 'results' : listofusers})
+    return render(request, 'search.html', {'results' : listofusers})
 
 #################
 #  FACEBOOK API #
@@ -256,7 +260,7 @@ def facebook(request):
     This is an example of getting basic user info and display it
     '''
     userInfo = getFacebook.get_user_info()
-    return render(request, 'hackathon/facebookAPIExample.html', { 'userInfo' : userInfo})
+    return render(request, 'facebookAPIExample.html', {'userInfo' : userInfo})
 
 #################
 #  GOOGLE API   #
@@ -264,7 +268,7 @@ def facebook(request):
 def googlePlus(request):
 
     userInfo = getGoogle.get_user_info()
-    return render(request, 'hackathon/googlePlus.html', {'userInfo' : userInfo})
+    return render(request, 'googlePlus.html', {'userInfo' : userInfo})
 
 ####################
 #   TWITTER API    #
@@ -280,7 +284,7 @@ def twitter(request):
         return HttpResponseRedirect(twitter_url)
 
     context ={'title': 'twitter', 'value': value}
-    return render(request, 'hackathon/twitter.html', context)
+    return render(request, 'twitter.html', context)
 
 def twitterTweets(request):
     print getTwitter.is_authorized
@@ -298,7 +302,7 @@ def twitterTweets(request):
         return HttpResponseRedirect(twitter_url)
 
     context ={'title': 'twitter tweet', 'content': content, 'data': jsonlist}
-    return render(request, 'hackathon/twitter_tweet.html', context)
+    return render(request, 'twitter_tweet.html', context)
 
 
 #########################
@@ -331,15 +335,15 @@ def register(request):
             user.set_password(user.password)
             user.save()
             registered = True
-            return HttpResponseRedirect('/hackathon/login/')
+            return HttpResponseRedirect('/login/')
         else:
             print user_form.errors
     else:
         user_form = UserForm()
 
     return render(request,
-            'hackathon/register.html',
-            {'user_form': user_form, 'registered': registered})
+                  'register.html',
+                  {'user_form': user_form, 'registered': registered})
 
 
 
@@ -353,13 +357,13 @@ def host_register(request):
             user.set_password(user.password)
             user.save()
             gRegister = True
-            return HttpResponseRedirect('/hackathon/api/')
+            return HttpResponseRedirect('/api/')
         else:
             print host_form.errors
     else:
         guide_form = HostForm()
     context = {'guide_form': guide_form, 'registered': gRegister}
-    return render(request, 'hackathon/host.html', context)
+    return render(request, 'host.html', context)
 
 
 ######################
@@ -380,11 +384,11 @@ def user_login(request):
             print "Invalid login details: {0}, {1}".format(username, password)
             return HttpResponse("Invalid login details supplied.")
     else:
-        return render(request, 'hackathon/login.html', {})
+        return render(request, 'login.html', {})
 
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect('/hackathon/login/')
+    return HttpResponseRedirect('/login/')
 
 
 def twitter_login(request):

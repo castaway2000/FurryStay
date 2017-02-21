@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-{% extends 'hackathon/base.html' %} {% include 'hackathon/base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% include 'base.html' %} {% load static %} {% block content %}
 <div class="container-fluid">
 	<h1>Find your host!</h1>
 	<br/>
@@ -15,7 +15,7 @@
 			<div class="col-sm-6 col-md-6">
 				{% for u in results %}
 				<div class="panel panel-default">
-					<a href='/hackathon/userpage/'> 
+					<a href='/userpage/'>
 					<div class="panel-body">
 						<p>{{u.username}}</p>
 						{{u.email}}

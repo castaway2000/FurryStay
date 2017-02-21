@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
-{% extends 'hackathon/base.html' %} {% include 'hackathon/base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% include 'base.html' %} {% load static %} {% block content %}
 <link rel="stylesheet" href="/static/css/form.css">
   <h1 class="form-signin-heading text-center">Sign up</h1>
   <br>
 {% if registered %}
 <strong>Thank you for registering!</strong>
-<a href="/hackathon/login/">Return to the homepage.</a><br /> {% else %}
+<a href="/login/">Return to the homepage.</a><br /> {% else %}
 <div style="background-color: #fbfbfc">
   <div class="container text-center">
     <br>
-    <form class="form-horizontal" id="user_form" method="post" action="/hackathon/register/" enctype="multipart/form-data">
+    <form class="form-horizontal" id="user_form" method="post" action="/register/" enctype="multipart/form-data">
       {% csrf_token %} {% load bootstrap %}
 
       <table>

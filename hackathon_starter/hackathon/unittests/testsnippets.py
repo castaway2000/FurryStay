@@ -10,36 +10,36 @@ class SnippetViewTestCase(APITestCase):
         super(SnippetViewTestCase, self).setUp()
 
     def test_list(self):
-        response = self.client.get('/hackathon/snippets/')
+        response = self.client.get('/snippets/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data), 2)
 
     def test_detail(self):
-        response = self.client.get('/hackathon/snippets/{}/'.format(self.s1.id))
+        response = self.client.get('/snippets/{}/'.format(self.s1.id))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['id'], self.s1.id)
 
     def test_create(self):
         payload = {'title': 't3', 'code': """print("Create, World.")"""}
-        response = self.client.post('/hackathon/snippets/', payload)
+        response = self.client.post('/snippets/', payload)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(response.data['title'], 't3')
         self.assertEqual(response.data['code'], """print("Create, World.")""")
 
     def test_update(self):
         payload = {'title': 't666', 'code': '2 + 2'}
-        response = self.client.put('/hackathon/snippets/{}/'.format(self.s1.id), payload)
+        response = self.client.put('/snippets/{}/'.format(self.s1.id), payload)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['title'], 't666')
         self.assertEqual(response.data['code'], '2 + 2')
 
     def test_partial_update(self):
         payload = {'title': 't666'}
-        response = self.client.patch('/hackathon/snippets/{}/'.format(self.s1.id), payload)
+        response = self.client.patch('/snippets/{}/'.format(self.s1.id), payload)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['title'], 't666')
 
     def test_delete(self):
-        response = self.client.delete('/hackathon/snippets/{}/'.format(self.s1.id))
+        response = self.client.delete('/snippets/{}/'.format(self.s1.id))
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Snippet.objects.count(), 1)

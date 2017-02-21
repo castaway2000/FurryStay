@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <body>
-{% extends 'hackathon/base.html' %}
-{% include 'hackathon/base.html' %}
+{% extends 'base.html' %}
+{% include 'base.html' %}
 {% load static %}
 {% block content %}
     <h1 class="text-center"> {{ title }}</h1>
     <br>
 
     <div class="container text-center">
-        <form class="form-inline" method='get' action="/hackathon/twitterTweets/">
+        <form class="form-inline" method='get' action="/twitterTweets/">
           <div class="form-group">
             <input type="text" name="tweets" class="form-control" placeholder="Input tweet, e.g: mayfield">
           </div>

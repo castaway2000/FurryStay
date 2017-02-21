@@ -8,6 +8,9 @@ router.register(r'snippets', views.SnippetView)
 
 urlpatterns = patterns('',
     url(r'^', include(router.urls)),
+
+    url(r'^search_results/$', views.search_results, name='search_results'),
+
     url(r'^index/$', views.index, name='index'),
     url(r'^about/$', views.about, name='about'),
     url(r'^coc/$', views.code_of_conduct, name='code_of_conduct'),

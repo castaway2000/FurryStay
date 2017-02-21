@@ -78,7 +78,7 @@ class TwitterOauthClient(object):
         #print self.oauth_token
 
         #link to authorize app access twitter data and return to twitter api example page
-        redirectUri = '&redirect_uri=http%3A%2F%2Flocalhost%3A8000/hackathon/twitter/'
+        redirectUri = '&redirect_uri=http%3A%2F%2Flocalhost%3A8000/twitter/'
         authURL = AUTHORIZE_URL+"?oauth_token="+self.oauth_token+redirectUri
         return authURL
 
