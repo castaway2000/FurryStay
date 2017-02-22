@@ -20,12 +20,14 @@
             {% load bootstrap %}
             <table>
                 {% if user.is_authenticated %}
-                
                     <tr>
                         <td class="container text-center">{{ guide_form.address | bootstrap_horizontal }}</td>
                     </tr>
                     <tr>
                         <td class="container text-center">{{ guide_form.city | bootstrap_horizontal }}</td>
+                    </tr>
+                    <tr>
+                        <td class="container text-center">{{ guide_form.state | bootstrap_horizontal }}</td>
                     </tr>
                     <tr>
                         <td class="container text-center">{{ guide_form.country | bootstrap_horizontal }}</td>
@@ -45,6 +47,9 @@
                     </tr>
                     <tr>
                         <td class="container text-center">{{ guide_form.city | bootstrap_horizontal }}</td>
+                    </tr>
+                    <tr>
+                        <td class="container text-center">{{ guide_form.state | bootstrap_horizontal }}</td>
                     </tr>
                     <tr>
                         <td class="container text-center">{{ guide_form.country | bootstrap_horizontal }}</td>

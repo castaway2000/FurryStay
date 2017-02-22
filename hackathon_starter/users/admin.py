@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import UserProfile, Profile, TwitterProfile
+from .models import UserProfile, Profile  #, TwitterProfile
 
 # Register your models here.
 class TwitterProfileAdmin(admin.ModelAdmin):
@@ -7,4 +7,4 @@ class TwitterProfileAdmin(admin.ModelAdmin):
 
 admin.site.register(UserProfile)
 admin.site.register(Profile)
-admin.site.register(TwitterProfile, TwitterProfileAdmin)
+# admin.site.register(TwitterProfile, TwitterProfileAdmin)

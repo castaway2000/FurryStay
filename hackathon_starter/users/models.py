@@ -21,14 +21,14 @@ class Profile(models.Model):
         return unicode(self.user)
 
 
-class TwitterProfile(models.Model):
-    user = models.ForeignKey(User)
-    twitter_user = models.CharField(max_length=200)
-    oauth_token = models.CharField(max_length=200)
-    oauth_token_secret = models.CharField(max_length=200)
+# class TwitterProfile(models.Model):
+#     user = models.ForeignKey(User)
+#     twitter_user = models.CharField(max_length=200)
+#     oauth_token = models.CharField(max_length=200)
+#     oauth_token_secret = models.CharField(max_length=200)
 
-    def __unicode__(self):
-        return unicode(self.user)
+#     def __unicode__(self):
+#         return unicode(self.user)
 
 
 class Snippet(models.Model):
@@ -51,17 +51,17 @@ class Snippet(models.Model):
 #         fields = ['username', 'email', 'password', 'address', 'city', 'country']
 
 
-class FacebookProfile(models.Model):
-    user = models.ForeignKey(User)
-    fb_user_id = models.CharField(max_length=100)
-    time_created = models.DateTimeField(auto_now_add=True)
-    profile_url = models.CharField(max_length=50)
-    access_token = models.CharField(max_length=100)
+# class FacebookProfile(models.Model):
+#     user = models.ForeignKey(User)
+#     fb_user_id = models.CharField(max_length=100)
+#     time_created = models.DateTimeField(auto_now_add=True)
+#     profile_url = models.CharField(max_length=50)
+#     access_token = models.CharField(max_length=100)
 
 
-class GoogleProfile(models.Model):
-    user = models.ForeignKey(User)
-    google_user_id = models.CharField(max_length=100)
-    time_created = models.DateTimeField(auto_now_add=True)
-    access_token = models.CharField(max_length=100)
-    profile_url = models.CharField(max_length=100)
+# class GoogleProfile(models.Model):
+#     user = models.ForeignKey(User)
+#     google_user_id = models.CharField(max_length=100)
+#     time_created = models.DateTimeField(auto_now_add=True)
+#     access_token = models.CharField(max_length=100)
+#     profile_url = models.CharField(max_length=100)
