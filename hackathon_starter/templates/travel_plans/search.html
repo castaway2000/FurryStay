@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %} {% include 'base.html' %} {% load static %} {% block content %}
+<div class="container-fluid">
+	<h1>Find your host!</h1>
+	<br/>
+</div>
+<div style="background-color: #fbfbfc">
+	<div class="container-fluid">
+		<br>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+                {% if location_visits %}
+                    {% for location_visit in location_visits %}
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                <div class="results-item">
+                                    <h4>{{ location_visit.location__name }}</h4>
+                                    <p>
+                                        {{ location_visit.date_start|date:"m.d.Y" }}-{{ location_visit.date_end|date:"m.d.Y" }}
+                                    </p>
+                                    <a href="{% url 'userpage' location_visit.user__username %}">
+                                        <p>
+                                            {{location_visit.user__username}}
+                                            {{location_visit.user__email}}
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="no-search-results">
+                        <h3 class="text-result">
+                           Sorry, there is no match for the given dates and location
+                            {{ request.POST.location }}
+                        </h3>
+                    </div>
+                {% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+</html>
