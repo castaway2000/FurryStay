@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %} {% include 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="/static/css/form.css">
+  <h1 class="form-signin-heading text-center">Sign up</h1>
+  <br>
+{% if registered %}
+<strong>Thank you for registering!</strong>
+<a href="/login/">Return to the homepage.</a><br /> {% else %}
+<div style="background-color: #fbfbfc">
+  <div class="container text-center">
+    <br>
+    <form class="form-horizontal" id="user_form" method="post" action="/register/" enctype="multipart/form-data">
+      {% csrf_token %} {% load bootstrap %}
+
+      <table>
+        <tr>
+          <td class="container text-center">{{ user_form.username | bootstrap_horizontal}}</td>
+        </tr>
+        <tr>
+          <td class="container text-center">{{ user_form.email | bootstrap_horizontal}}</td>
+        </tr>
+        <tr>
+          <td class="container text-center">{{ user_form.password | bootstrap_horizontal}}</td>
+        </tr>
+      </table>
+      <button class="btn btn-lg btn-primary" type="submit">Register</button>
+      <input type="hidden" name="submit" value="Register" />
+    </form>
+  </div>
+</div>
+{% endif %} {% endblock %}
+
+</html>

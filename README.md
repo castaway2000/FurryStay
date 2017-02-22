@@ -40,7 +40,7 @@ For Python-specific libraries, this project relies on [pip](https://pypi.python.
 
 To get up and running, simply do the following:
 
-    $ git clone https://github.com/DrkSephy/django-hackathon-starter.git
+    $ git clone https://github.com/castaway2000/OpenStay.git
     $ cd django-hackathon-starter
 
     # Install the requirements
