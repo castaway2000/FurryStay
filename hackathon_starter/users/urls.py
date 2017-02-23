@@ -12,8 +12,9 @@ urlpatterns = patterns('',
     url(r'^host/$', views.host_register, name='host'),
 
     url(r'^userpage/$', views.userpage, name='my_userpage'),
+    url(r'^edit_userpage/$', views.edit_userpage, name='edit_userpage'),
+    url(r'^dashboard/$', views.user_dashboard, name='dashboard'),
     url(r'^userpage/(?P<username>\w+)/$', views.userpage, name='userpage'),
-
     url(r'^register/$', views.register, name='register'),
     url(r'^login/$', views.user_login, name='login'),
     url(r'^logout/$', views.user_logout, name='logout'),

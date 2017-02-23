@@ -99,6 +99,63 @@ def userpage(request, username=None):
     return render(request, 'users/userpage.html', context)
 
 
+##################
+#  edit userpage #
+##################
+
+def edit_userpage(request, username=None):
+    user = request.user
+    if username:
+        try:
+            user = User.objects.get(username=username)
+        except:
+            return render(request, 'users/edit_userpage.html')
+    # if no username is specified in url, it is possible to display info just for current user
+    elif not user.is_anonymous():
+        user = request.user
+    else:
+        return render(request, 'users/edit_userpage.html')
+    username = user.username
+    interests = 'sports, mountain climbing, bleh, foobar, coding'
+    accomodation = "house, wifi, etc..."
+    about = 'About me...'
+    # for pictures: http://ashleydw.github.io/lightbox/
+    context = {'username': username,
+               'interests': interests,
+               'accomodation': accomodation,
+               'about': about
+               }
+    return render(request, 'users/edit_userpage.html', context)
+
+##################
+#   dashboard   #
+##################
+
+def user_dashboard(request, username=None):
+    user = request.user
+    if username:
+        try:
+            user = User.objects.get(username=username)
+        except:
+            return render(request, 'users/dashboard.html')
+    # if no username is specified in url, it is possible to display info just for current user
+    elif not user.is_anonymous():
+        user = request.user
+    else:
+        return render(request, 'users/dashboard.html')
+    username = user.username
+    schedule = "here be dragons between january and december"
+    messages = "To from and inbetween"
+
+    # for pictures: http://ashleydw.github.io/lightbox/
+    context = {'username': username,
+               'schedule': schedule,
+               'messages': messages,
+               }
+    return render(request, 'users/dashboard.html', context)
+
+
+
 #################
 #  FACEBOOK API #
 #################

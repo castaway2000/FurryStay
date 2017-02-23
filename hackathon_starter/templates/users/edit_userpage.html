@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% if not username %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="lead">
+                        Please, specify username or login.
+                    </p>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container">
+            <div class="row">
+                <br/>
+                <div class="col-sm-3 col-md-3">
+                    <img class="img-circle" src="{% static 'img/photo.jpg' %}" alt="github" height="90%" width="90%">
+                    <br/>
+                    <button type="submit" class="btn btn-default">upload a pic</button>
+                </div>
+                <div class="col-sm-9 col-md-9">
+                    <form class="form-signin" id="login_form" method="post" action="/login/">
+                        {% csrf_token %}
+                        {% load bootstrap %}
+                        <br>
+                        <input type="text" name="interests" class="form-control" placeholder={{ interests }} value="" >
+                        <br>
+                        <input type="text" name="accomodation" class="form-control" placeholder={{ accomodation }} value="">
+                        <br>
+                        <textarea type="text" name="about" class="form-control" maxlength="50000" placeholder={{ about }} value="" rows="5"></textarea>
+                        5000 character limit
+                        <br>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                        <input type="hidden" name="submit" value="submit"/>
+                    </form>
+                </div>
+                <br/><br/><br/>
+                pics will go here i guess
+            </div>
+        </div>
+<hr>
+    {% endif %}
+{% endblock %}
+
