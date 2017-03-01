@@ -157,7 +157,7 @@ To get up and running, simply do the following:
 ## Contributing
 
 
-We welcome contributions of all kinds. If you would like to know what work is needed to be done, check the [issue tracker](https://github.com/DrkSephy/django-hackathon-starter/issues). Before sending a pull request, please open an issue. This project follows the [pep-0008](https://www.python.org/dev/peps/pep-0008/) style guide.
+We welcome contributions of all kinds. If you would like to know what work is needed to be done, check the [issue tracker](https://github.com/castaway2000/open_stay/issues). Before sending a pull request, please open an issue. This project follows the [pep-0008](https://www.python.org/dev/peps/pep-0008/) style guide.
 
 
 ### LICENSE
