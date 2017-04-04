@@ -155,61 +155,6 @@ def user_dashboard(request, username=None):
     return render(request, 'users/dashboard.html', context)
 
 
-
-#################
-#  FACEBOOK API #
-#################
-
-# def facebook(request):
-#     '''
-#     This is an example of getting basic user info and display it
-#     '''
-#     userInfo = getFacebook.get_user_info()
-#     return render(request, 'users/facebookAPIExample.html', {'userInfo' : userInfo})
-
-#################
-#  GOOGLE API   #
-#################
-# def googlePlus(request):
-
-#     userInfo = getGoogle.get_user_info()
-#     return render(request, 'users/googlePlus.html', {'userInfo' : userInfo})
-
-####################
-#   TWITTER API    #
-####################
-
-# def twitter(request):
-#     if getTwitter.is_authorized:
-#         value = getTwitter.get_trends_available(settings.YAHOO_CONSUMER_KEY)
-#     else:
-#         global profile_track
-#         profile_track = 'twitter'
-#         twitter_url = getTwitter.get_authorize_url()
-#         return HttpResponseRedirect(twitter_url)
-
-#     context ={'title': 'twitter', 'value': value}
-#     return render(request, 'users/twitter.html', context)
-
-# def twitterTweets(request):
-#     print getTwitter.is_authorized
-#     if getTwitter.is_authorized:
-#         if request.method == 'GET':
-#             if request.GET.items():
-#                 tweets = request.GET.get('tweets')
-#                 content, jsonlist = getTwitter.get_tweets(tweets)
-#             else:
-#                 content, jsonlist = '', ''
-#     else:
-#         global profile_track
-#         profile_track = 'twitter'
-#         twitter_url = getTwitter.get_authorize_url()
-#         return HttpResponseRedirect(twitter_url)
-
-#     context ={'title': 'twitter tweet', 'content': content, 'data': jsonlist}
-#     return render(request, 'users/twitter_tweet.html', context)
-
-
 #########################
 # Snippet RESTful Model #
 #########################
@@ -262,20 +207,15 @@ def host_register(request):
             if host_form.is_valid():
                 host = host_form.save()
                 gRegister = True
-                return HttpResponseRedirect('/api/')
+                return HttpResponseRedirect('/')
             else:
                 print host_form.errors
     else:
         if request.method == 'POST':
-            user_form = UserForm(data=request.POST)
             host_form = HostForm(data=request.POST)
-            if user_form.is_valid():
-                userf = user_form.save()
-                userf.set_password(user.password)
-                userf.save()
             if host_form.is_valid():
                 hostf = host_form.save()
-                hostf.set_password(user.password)
+                hostf.set_password(hostf.password)
                 hostf.save()
                 gRegister = True
                 return HttpResponseRedirect('/login/')
@@ -309,24 +249,3 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect('/login/')
-
-
-# def twitter_login(request):
-#     global profile_track
-#     profile_track = 'twitter'
-#     twitter_url = getTwitter.get_authorize_url()
-#     return HttpResponseRedirect(twitter_url)
-
-
-# def facebook_login(request):
-#     global profile_track
-#     profile_track = 'facebook'
-#     facebook_url = getFacebook.get_authorize_url()
-#     return HttpResponseRedirect(facebook_url)
-
-
-# def google_login(request):
-#     global profile_track
-#     profile_track = 'google'
-#     google_url = getGoogle.get_authorize_url()
-#     return HttpResponseRedirect(google_url)
