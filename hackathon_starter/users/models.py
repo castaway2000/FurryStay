@@ -21,8 +21,8 @@ class Profile(models.Model):
 
 
 class HostRegistration(models.Model):
-    username = models.OneToOneField(User, unique=True)
-    email = models.EmailField(max_length=100)
+    username = models.CharField(max_length=50, unique=True)
+    email = models.EmailField(max_length=100, null=True, blank=True)
     address = models.CharField(max_length=200)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=30)
@@ -31,8 +31,6 @@ class HostRegistration(models.Model):
     # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):
         return self.user.username
-
-
 
 
 class Snippet(models.Model):

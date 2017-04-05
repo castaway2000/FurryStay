@@ -14,46 +14,27 @@
     <div style="background-color: #fbfbfc">
     <div class="container text-center">
     <br>
-        <form class="form-horizontal" id="guide_form" method="post" action="/host/"
+        <form class="form-horizontal" id="guide_form" method="POST" action="/host/"
               enctype="multipart/form-data">
             {% csrf_token %}
             {% load bootstrap %}
             <table>
                 {% if user.is_authenticated %}
-                    <tr>
-                        <td class="container text-center">{{ guide_form.address | bootstrap_horizontal }}</td>
-                    </tr>
-                    <tr>
-                        <td class="container text-center">{{ guide_form.city | bootstrap_horizontal }}</td>
-                    </tr>
-                    <tr>
-                        <td class="container text-center">{{ guide_form.state | bootstrap_horizontal }}</td>
-                    </tr>
-                    <tr>
-                        <td class="container text-center">{{ guide_form.country | bootstrap_horizontal }}</td>
-                    </tr>
+                    {% for guide in guide_form %}
+                        {{ guide.errors }}
+                        {% if forloop.counter > 3 %}
+                            <tr>
+                                <td class="container text-center">{{ guide | bootstrap_horizontal }}</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
                 {% else %}
-                    <tr>
-                        <td class="container text-center">{{ guide_form.username | bootstrap_horizontal }}</td>
-                    </tr>
-                    <tr>
-                        <td class="container text-center">{{ guide_form.password | bootstrap_horizontal }}</td>
-                    </tr>
-                    <tr>
-                        <td class="container text-center">{{ guide_form.email | bootstrap_horizontal }}</td>
-                    </tr>
-                    <tr>
-                        <td class="container text-center">{{ guide_form.address | bootstrap_horizontal }}</td>
-                    </tr>
-                    <tr>
-                        <td class="container text-center">{{ guide_form.city | bootstrap_horizontal }}</td>
-                    </tr>
-                    <tr>
-                        <td class="container text-center">{{ guide_form.state | bootstrap_horizontal }}</td>
-                    </tr>
-                    <tr>
-                        <td class="container text-center">{{ guide_form.country | bootstrap_horizontal }}</td>
-                    </tr>
+                    {% for guide in guide_form %}
+                            {{ guide.errors }}
+                            <tr>
+                                <td class="container text-center">{{ guide | bootstrap_horizontal }}</td>
+                            </tr>
+                    {% endfor %}
                 {% endif %}
             </table>
             <button class="btn btn-lg btn-primary" type="submit">Register</button>

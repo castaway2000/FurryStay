@@ -30,7 +30,7 @@ import requests
 # Models
 from models import *
 from serializers import SnippetSerializer
-from forms import UserForm, HostForm
+from forms import UserForm
 
 profile_track = None
 # getTwitter = TwitterOauthClient(settings.TWITTER_CONSUMER_KEY, settings.TWITTER_CONSUMER_SECRET, settings.TWITTER_ACCESS_TOKEN, settings.TWITTER_ACCESS_TOKEN_SECRET)
@@ -201,18 +201,10 @@ def register(request):
 def host_register(request):
     gRegister = False
     user = request.user
-    if user.is_authenticated:
+    if user.is_authenticated == True:
         if request.method == 'POST':
-            host_form = HostForm(data=request.POST)
-            if host_form.is_valid():
-                host = host_form.save()
-                gRegister = True
-                return HttpResponseRedirect('/')
-            else:
-                print host_form.errors
-    else:
-        if request.method == 'POST':
-            host_form = HostForm(data=request.POST)
+            print "Current user", u
+            host_form = UserForm(data=request.POST, instance=user)
             if host_form.is_valid():
                 hostf = host_form.save()
                 hostf.set_password(hostf.password)
@@ -221,9 +213,27 @@ def host_register(request):
                 return HttpResponseRedirect('/login/')
             else:
                 print host_form.errors
-    guide_form = HostForm()
-    context = {'guide_form': guide_form, 'registered': gRegister}
-    return render(request, 'users/host.html', context)
+                
+        guide_form = UserForm()
+        context = {'guide_form': guide_form, 'registered': gRegister}
+        return render(request, 'users/host.html', context)
+
+        
+    else:
+        if request.method == 'POST':
+            host_form = UserForm(data=request.POST)
+            if host_form.is_valid():
+                hostf = host_form.save()
+                hostf.set_password(hostf.password)
+                hostf.save()
+                gRegister = True
+                return HttpResponseRedirect('/login/')
+            else:
+                print host_form.errors
+                
+        guide_form = UserForm()
+        context = {'guide_form': guide_form, 'registered': gRegister}
+        return render(request, 'users/host.html', context)
 
 
 ######################
