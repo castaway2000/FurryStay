@@ -8,22 +8,24 @@
 <strong>Thank you for registering!</strong>
 <a href="/login/">Return to the homepage.</a><br /> {% else %}
 <div style="background-color: #fbfbfc">
-  <div class="container text-center">
-    <br>
-    <form class="form-horizontal" id="user_form" method="post" action="/register/" enctype="multipart/form-data">
-      {% csrf_token %} {% load bootstrap %}
-
-      <table>
-        {% for user in user_form %}
-        <tr>
-          <td class="container text-center">{{ user | bootstrap_horizontal}}</td>
-        </tr>
-        {% endfor %}
-      </table>
-      <button class="btn btn-lg btn-primary" type="submit">Register</button>
-      <input type="hidden" name="submit" value="Register" />
-    </form>
-  </div>
+    <div class="container text-center">
+        <br>
+        <form class="form-horizontal" id="user_form" method="post" action="/register/" enctype="multipart/form-data">
+            {% csrf_token %} {% load bootstrap %}
+            
+            <table>
+                {% for user in user_form %}
+                    {% if forloop.counter > 4 %}
+                        <tr>
+                            <td class="container text-center">{{ user | bootstrap_horizontal}}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+            <button class="btn btn-lg btn-primary" type="submit">Register</button>
+            <input type="hidden" name="submit" value="Register" />
+        </form>
+    </div>
 </div>
 {% endif %} {% endblock %}
 
