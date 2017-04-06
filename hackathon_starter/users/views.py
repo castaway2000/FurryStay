@@ -209,20 +209,14 @@ def host_register(request):
         if request.method == 'POST':
             host_form = HostForm(data=request.POST)
             if host_form.is_valid():
-                hostmodel = HostRegistration
-                setattr(hostmodel, 'user', request.user.id)
-                setattr(hostmodel, 'ishost', 1)
-                # these two things need to be saved together. XD
-                # host_form and host_registration need combining. 
-                host = host_form.save()
-                # host.save()
+                instance = host_form.save(commit=False)
+                instance.user = request.user
+                instance.save()
                 return HttpResponseRedirect('/edit_userpage/')
             else:
                 print host_form.errors
     else:
         return HttpResponseRedirect('/')
-    
-    
     guide_form = HostForm()
     context = {'guide_form': guide_form}
     return render(request, 'users/host.html', context)

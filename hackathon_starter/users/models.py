@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -20,8 +21,7 @@ class Profile(models.Model):
 
 
 class HostRegistration(models.Model):
-    user = models.OneToOneField(User, unique=True, default='')
-    ishost = models.CharField(max_length=1, default=0)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     address = models.CharField(max_length=200)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=30)
@@ -29,10 +29,7 @@ class HostRegistration(models.Model):
     country = models.CharField(max_length=30)
     # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):
-        return self.user.username
-
-
-
+        return self.user
 
 class Snippet(models.Model):
     created = models.DateTimeField(auto_now_add=True)
