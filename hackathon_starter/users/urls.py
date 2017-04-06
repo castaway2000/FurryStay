@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     url(r'^', include(router.urls)),
 
     url(r'^host/$', views.host_register, name='host'),
-
+    url(r'^chooser$', views.chooser, name='chooser'),
     url(r'^userpage/$', views.userpage, name='my_userpage'),
     url(r'^edit_userpage/$', views.edit_userpage, name='edit_userpage'),
     url(r'^dashboard/$', views.user_dashboard, name='dashboard'),

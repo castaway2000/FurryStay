@@ -175,7 +175,7 @@ class SnippetView(CRUDBaseView):
 ######################
 # Registration Views #
 ######################
-
+#normal user
 def register(request):
     registered = False
     if request.method == 'POST':
@@ -185,45 +185,62 @@ def register(request):
             user.set_password(user.password)
             user.save()
             registered = True
-            return HttpResponseRedirect('/login/')
         else:
             print user_form.errors
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user.is_authenticated:
+            login(request, user)
+            return HttpResponseRedirect('../chooser')
+        else:
+            raise Exception("user is not authenticated")
     else:
         user_form = UserForm()
-
     return render(request,
                   'users/register.html',
                   {'user_form': user_form, 'registered': registered})
 
 
-
-# HOST
+# become a host
 def host_register(request):
-    gRegister = False
     user = request.user
     if user.is_authenticated:
         if request.method == 'POST':
             host_form = HostForm(data=request.POST)
             if host_form.is_valid():
+                hostmodel = HostRegistration
+                setattr(hostmodel, 'user', request.user.id)
+                setattr(hostmodel, 'ishost', 1)
+                # these two things need to be saved together. XD
+                # host_form and host_registration need combining. 
                 host = host_form.save()
-                gRegister = True
-                return HttpResponseRedirect('/')
+                # host.save()
+                return HttpResponseRedirect('/edit_userpage/')
             else:
                 print host_form.errors
     else:
-        if request.method == 'POST':
-            host_form = HostForm(data=request.POST)
-            if host_form.is_valid():
-                hostf = host_form.save()
-                hostf.set_password(hostf.password)
-                hostf.save()
-                gRegister = True
-                return HttpResponseRedirect('/login/')
-            else:
-                print host_form.errors
+        return HttpResponseRedirect('/')
+    
+    
     guide_form = HostForm()
-    context = {'guide_form': guide_form, 'registered': gRegister}
+    context = {'guide_form': guide_form}
     return render(request, 'users/host.html', context)
+
+
+######################
+#       chooser      #
+######################
+def chooser(request):
+    user = request.user
+    if user:
+        print 'foo'
+    if request.POST.get('yes_btn'):
+            return HttpResponseRedirect('/host/')
+    elif request.POST.get('no_btn'):
+        return HttpResponseRedirect('/edit_userpage/')
+    context = {'user': user}
+    return render(request, 'users/chooser.html', context)
 
 
 ######################
@@ -248,4 +265,4 @@ def user_login(request):
 
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect('/login/')
+    return HttpResponseRedirect('/')

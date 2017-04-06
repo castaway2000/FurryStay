@@ -15,14 +15,13 @@ class Profile(models.Model):
     user = models.ForeignKey(User)
     oauth_token = models.CharField(max_length=200)
     oauth_secret = models.CharField(max_length=200)
-    
     def __unicode__(self):
         return unicode(self.user)
 
 
 class HostRegistration(models.Model):
-    username = models.OneToOneField(User, unique=True)
-    email = models.EmailField(max_length=100)
+    user = models.OneToOneField(User, unique=True, default='')
+    ishost = models.CharField(max_length=1, default=0)
     address = models.CharField(max_length=200)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=30)

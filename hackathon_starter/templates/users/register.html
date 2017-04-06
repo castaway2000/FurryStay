@@ -12,7 +12,6 @@
     <br>
     <form class="form-horizontal" id="user_form" method="post" action="/register/" enctype="multipart/form-data">
       {% csrf_token %} {% load bootstrap %}
-
       <table>
         <tr>
           <td class="container text-center">{{ user_form.username | bootstrap_horizontal}}</td>
