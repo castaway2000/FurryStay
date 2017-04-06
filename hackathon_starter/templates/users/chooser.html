@@ -1,0 +1,19 @@
+<html>
+{% extends 'base.html' %}
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static "../static/static_dev/css/form.css" %}">
+<h2 class="form-signin-heading text-center">Would you like to also become a host?</h2>
+<div style="background-color: #fbfbfc">
+  <div class="container text-center">
+    <br>
+    <form class="form-horizontal" id="choose_form" method="post">
+    {% csrf_token %} {% load bootstrap %}
+    <input class="btn btn-lg btn-primary btn-block" type="submit" value='yes' name='yes_btn' />
+    <br>
+    <input class="btn btn-lg btn-primary btn-block" type="submit" value='not yet' name='no_btn' />
+    </form>
+</div>
+</div>
+{% endblock %}
