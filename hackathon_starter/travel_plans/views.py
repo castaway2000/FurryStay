@@ -15,11 +15,10 @@ def search(request):
     if request.POST:
         data = request.POST
         print data
-
         kwargs = dict()
 
         if data.get("location"):
-            kwargs["location__name"] = data.get("location")
+            kwargs["location__city"] = data.get("location")
 
         if data.get("date_start"):
             kwargs["date_start__gte"]=datetime.datetime.strptime(data.get("date_start"), "%d-%b-%Y").date()
@@ -31,7 +30,7 @@ def search(request):
 
 
         location_visits = LocationVisit.objects.filter(**kwargs)\
-            .values("location__name", "date_start", "date_end", "user__username", "user__email")
+            .values("location__city", "date_start", "date_end", "user__username", "user__email")
 
         print (kwargs)
         print (location_visits)
