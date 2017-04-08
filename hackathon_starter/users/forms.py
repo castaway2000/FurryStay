@@ -16,3 +16,9 @@ class HostForm(forms.ModelForm):
     class Meta:
         model = HostRegistration
         fields = ['address', 'city', 'state', 'zipcode', 'country']
+
+
+# class UpdateProfile(forms.ModelForm):
+#     class Meta:
+#         model = UserProfile
+#         fields ['interest', 'accomodation', 'about']

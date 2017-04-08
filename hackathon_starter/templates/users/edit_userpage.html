@@ -27,14 +27,16 @@
                         {% load bootstrap %}
                         <br>
                         <input type="text" name="interests" class="form-control" placeholder={{ interests }} value="" >
+                        500 character limit
                         <br>
                         <input type="text" name="accomodation" class="form-control" placeholder={{ accomodation }} value="">
+                        500 character limit
                         <br>
                         <textarea type="text" name="about" class="form-control" maxlength="50000" placeholder={{ about }} value="" rows="5"></textarea>
                         5000 character limit
                         <br>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                        <input type="hidden" name="submit" value="submit"/>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">update profile</button>
+                        <input type="hidden" name="update_profile" value="submit"/>
                     </form>
                 </div>
                 <br/><br/><br/>
