@@ -13,36 +13,45 @@
             </div>
         </div>
     {% else %}
+    {% if user.is_authenticated %}
         <div class="container">
             <div class="row">
-                <br/>
-                <div class="col-sm-3 col-md-3">
-                    <img class="img-circle" src="{% static 'img/photo.jpg' %}" alt="github" height="90%" width="90%">
-                    <br/>
-                    <button type="submit" class="btn btn-default">upload a pic</button>
-                </div>
-                <div class="col-sm-9 col-md-9">
-                    <form class="form-signin" id="login_form" method="post" action="/login/">
+                    <form class="form-update" id="profile_form" method="post" action="/edit_userpage/" enctype="multipart/form-data">
                         {% csrf_token %}
                         {% load bootstrap %}
-                        <br>
-                        <input type="text" name="interests" class="form-control" placeholder={{ interests }} value="" >
+                        <div class="col-sm-3 col-md-3">
+                            <img class="img-circle" src={{ profile_form.instance.profile_image.url }}
+                            enctype="multipart/form-data" alt="profile image" height="90%" width="90%">
+                            <br/>
+                            <p>
+                               <input id="id_image" type="file" class="" name="image">
+                            </p>
+                        </div>
+                        <div class="col-sm-9 col-md-9">
+                        <br />
+                        <input type="text" name="interests" class="form-control" maxlength="500" value="" >
+                            {{ profile_form.interests }}
+                        </input>
                         500 character limit
                         <br>
-                        <input type="text" name="accomodation" class="form-control" placeholder={{ accomodation }} value="">
+                        <input type="text" name="accomodation" class="form-control" maxlength="500" value="">
+                            {{ profile_form.accomodation }}
+                        </input>
                         500 character limit
                         <br>
-                        <textarea type="text" name="about" class="form-control" maxlength="50000" placeholder={{ about }} value="" rows="5"></textarea>
+                        <textarea type="text" name="about" class="form-control" maxlength="5000" rows="5">
+                            {{ profile_form.about }}
+                        </textarea>
                         5000 character limit
                         <br>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">update profile</button>
-                        <input type="hidden" name="update_profile" value="submit"/>
+                        <input type="hidden" name="submit" value="Update"/>
                     </form>
                 </div>
                 <br/><br/><br/>
-                pics will go here i guess
             </div>
         </div>
+    {% endif %}
 <hr>
     {% endif %}
 {% endblock %}

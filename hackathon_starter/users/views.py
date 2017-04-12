@@ -25,13 +25,18 @@ from scripts.googlePlus import *
 import oauth2 as oauth
 import simplejson as json
 import requests
+import logging as LOG
 
 
 # Models
 from models import *
 from serializers import SnippetSerializer
-from forms import UserForm, HostForm
+from forms import UserForm, HostForm, UpdateProfile
 
+YELP_CONSUMER_KEY = '9PLzBaT21UbHC7MCS5eYkQ'
+YELP_CONSUMER_SECRET = 'I9NC-0JB2Mc7H6kHD_Y-D0Lqfuk'
+YELP_ACCESS_KEY = 'go7gUc6VZnAinnMRg9BB9TQ2NcUEtAEE'
+YELP_ACCESS_SECRET = 'yMzMcMAiMOQyHQTWKfrqJpdQEBs'
 profile_track = None
 # getTwitter = TwitterOauthClient(settings.TWITTER_CONSUMER_KEY, settings.TWITTER_CONSUMER_SECRET, settings.TWITTER_ACCESS_TOKEN, settings.TWITTER_ACCESS_TOKEN_SECRET)
 # getFacebook = FacebookOauthClient(settings.FACEBOOK_APP_ID, settings.FACEBOOK_APP_SECRET)
@@ -41,60 +46,71 @@ profile_track = None
 ##################
 #   userpage     #
 ##################
-
 def userpage(request, username=None):
     user = request.user
-
-    print username
-
-    if username:
-        try:
-            user = User.objects.get(username=username)
-        except:
-            return render(request, 'users/userpage.html')
-
-    #if no username is specified in url, it is possible to display info just for current user
-    elif not user.is_anonymous():
-        user = request.user
-    else:
-        return render(request, 'users/userpage.html')
-
-    username = user.username
-
-    location = "new york city"
-    interests = 'sports, mountain climbing, bleh, foobar, coding'
-    accomodation = ['house', 'double bed', 'futon']
-    # for pictures: http://ashleydw.github.io/lightbox/
+    print user.id
+    location = 'Seattle, WA'
+    interests = 'cars, boating, photography'
+    accomodation = 'house, wifi, stuffs'
+    about = 'my name is morgan freeman and you are now reading this in my voice.'
+    image = 'img/photo.jpg'
     
-    YELP_CONSUMER_KEY = '9PLzBaT21UbHC7MCS5eYkQ'
-    YELP_CONSUMER_SECRET = 'I9NC-0JB2Mc7H6kHD_Y-D0Lqfuk'
-    YELP_ACCESS_KEY = 'go7gUc6VZnAinnMRg9BB9TQ2NcUEtAEE'
-    YELP_ACCESS_SECRET = 'yMzMcMAiMOQyHQTWKfrqJpdQEBs'
     consumer_key = YELP_CONSUMER_KEY
     consumer_secret = YELP_CONSUMER_SECRET
     access_key = YELP_ACCESS_KEY
     access_secret = YELP_ACCESS_SECRET
-    
-    
     site = 'https://api.yelp.com/v2/search'
     consumer = oauth.Consumer(consumer_key, consumer_secret)
     access_token = oauth.Token(access_key, access_secret)
     client = oauth.Client(consumer, access_token)
     endpoint = 'https://api.yelp.com/v2/search/'
+    
+    # if from search engine
+    if username:
+        try:
+            user = User.objects.get(username=username)
+            uid = user.id
+            host_info = HostRegistration.objects.get(user_id = uid)
+            profile_info = UserProfile.objects.get(user_id = uid)
+            location = "%s, %s" % (host_info.city, host_info.state) # "new york city"
+            interests = profile_info.interests  # 'sports, mountain climbing, bleh, foobar, coding'
+            accomodation = profile_info.accomodation  # ['house', 'double bed', 'futon']
+            about = profile_info.about
+            image = profile_info.profile_image
+        except:
+            return render(request, 'users/userpage.html')
+    
+    #if no username is specified in url, it is possible to display info just for current user
+    elif not user.is_anonymous():
+        print 'is anon'
+        user = request.user
+        username = user.username
+        uid = user.id
+        try:
+            print 1
+            host_info = HostRegistration.objects.get(user_id=uid)
+            profile_info = UserProfile.objects.get(user_id=uid)
+            location = "%s, %s" % (host_info.city, host_info.state) # "new york city"
+            interests = profile_info.interests  # 'sports, mountain climbing, bleh, foobar, coding'
+            accomodation = profile_info.accomodation  # ['house', 'double bed', 'futon']
+            about = profile_info.about
+            image = profile_info.profile_image
+        except Exception as err:
+            print err
     search_terms = '?term=tourist attractions&location='+ location + \
-                   '&limit=10&radius_filter=10000'
+                       '&limit=10&radius_filter=10000'
     responce, data = client.request(endpoint+search_terms)
     attractions = json.loads(data)['businesses']
-
     listofattractions = list()
     for n in xrange(0, len(attractions)):
         listofattractions.append(attractions[n]['name'])
-
     context = {'username': username,
+               'profile_image': image,
                'location': location,
                'yelp': listofattractions,
                'interests': interests,
-               'accomodation': accomodation
+               'accomodation': accomodation,
+               'about': about
                }
     return render(request, 'users/userpage.html', context)
 
@@ -103,30 +119,48 @@ def userpage(request, username=None):
 #  edit userpage #
 ##################
 
-def edit_userpage(request, username=None):
+def edit_userpage(request):
     user = request.user
-    if username:
+    print 'outside'
+    if user.is_authenticated:
+        print 'is authed'
+        username = user.username
         try:
-            user = User.objects.get(username=username)
-        except:
-            return render(request, 'users/edit_userpage.html')
-    # if no username is specified in url, it is possible to display info just for current user
-    elif not user.is_anonymous():
-        user = request.user
+            print 'try'
+            profile = UserProfile.objects.get(user=user.id)
+            print profile
+            interests = profile.interests
+            accomodation = profile.accomodation
+            about  = profile.about
+        except Exception as err:
+            print err
+            interests = 'interests'
+            accomodation = 'accomodation'
+            about  = 'about'
+        if request.method == 'POST':
+            print 'POST'
+            profileID = UserProfile.objects.get(user_id=user.id)
+            profile_form = UpdateProfile(request.POST, request.FILES, instance=profileID)
+            if profile_form.is_valid():
+                instance = profile_form.save(commit=False)
+                print 'instance %s' % profile_form
+                print 'FILES: ', request.FILES
+                if 'image' in request.FILES:
+                    instance.profile_image = request.FILES['image']
+                instance.save()
+                return HttpResponseRedirect('/userpage/')
+            else:
+                print profile_form.errors
+        context = {'username': username,
+                  'interests': interests,
+                  'accomodation': accomodation,
+                  'about': about
+                   }
+        return render(request, 'users/edit_userpage.html', context)
     else:
-        return render(request, 'users/edit_userpage.html')
-    username = user.username
-    interests = 'sports, mountain climbing, bleh, foobar, coding'
-    accomodation = "house, wifi, etc..."
-    about = 'About me...'
-    # for pictures: http://ashleydw.github.io/lightbox/
-    context = {'username': username,
-               'interests': interests,
-               'accomodation': accomodation,
-               'about': about
-               }
-    return render(request, 'users/edit_userpage.html', context)
-
+        return HttpResponseRedirect('/')
+    
+    
 ##################
 #   dashboard   #
 ##################

@@ -13,22 +13,16 @@
                 {% if location_visits %}
                     {% for location_visit in location_visits %}
                         <div class="panel panel-default">
-
                             <div class="panel-body">
                                 <div class="results-item">
-                                    <h4>{{ location_visit.location__city }}</h4>
+                                    <h4>{{ location_visit.city }}</h4>
                                     <p>
-                                        {{ location_visit.date_start|date:"m.d.Y" }}-{{ location_visit.date_end|date:"m.d.Y" }}
                                     </p>
                                     <a href="{% url 'userpage' location_visit.user__username %}">
-                                        <p>
-                                            {{location_visit.user__username}}
-                                            {{location_visit.user__email}}
-                                        </p>
+                                            {{ location_visit.user__username }}
                                     </a>
                                 </div>
                             </div>
-
                         </div>
                     {% endfor %}
                 {% else %}
@@ -44,5 +38,4 @@
 	</div>
 </div>
 {% endblock %}
-
 </html>
