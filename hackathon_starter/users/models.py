@@ -4,7 +4,16 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
+# class ModelManager(models.Manager, UserID=None):
+#     self.userid = self.UserID
+#     def get_queryset(self, userid):
+#         if self.userid != None:
+            
+#         return super(ModelManager, self).get_queryset().filter(user_id=userid)
+
+
 class Profile(models.Model):
+    objects = models.Manager()
     user = models.ForeignKey(User)
     oauth_token = models.CharField(max_length=200)
     oauth_secret = models.CharField(max_length=200)
@@ -23,8 +32,9 @@ class Snippet(models.Model):
 
 class UserProfile(models.Model):
     # This line is required. Links UserProfile to a User model instance.
+    objects = models.Manager()
     user = models.OneToOneField(User)
-    profile_image = models.ImageField(upload_to = '/hackathon_starter/static/static_dev/img/user_pics/' , default = '/hackathon_starter/static/static_dev/img/photo.jpg')
+    profile_image = models.ImageField(upload_to = 'img/userpics/', default = 'img/userpics/default_profile_picture.jpg')
     interests = models.CharField(max_length=500)
     accomodation = models.CharField(max_length=500)
     about = models.CharField(max_length=5000)
@@ -34,6 +44,7 @@ class UserProfile(models.Model):
 
 
 class HostRegistration(models.Model):
+    objects = models.Manager()
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     address = models.CharField(max_length=200)
     city = models.CharField(max_length=100)
@@ -47,6 +58,7 @@ class HostRegistration(models.Model):
 
 
 class Reviews(models.Model):
+    objects = models.Manager()
     to_user = models.ForeignKey(User, related_name='to_user')
     from_user = models.OneToOneField(User, related_name='from_user')
     rating = models.CharField(max_length=1)
@@ -54,6 +66,7 @@ class Reviews(models.Model):
     
 
 class DirectMessage(models.Model):
+    objects = models.Manager()
     to_user = models.ForeignKey(User, related_name='recv_user')
     from_user = models.OneToOneField(User, related_name='sender_user')
     message = models.CharField(max_length=5000)

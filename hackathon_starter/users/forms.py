@@ -18,7 +18,7 @@ class HostForm(forms.ModelForm):
         fields = ['address', 'city', 'state', 'zipcode', 'country']
 
 
-# class UpdateProfile(forms.ModelForm):
-#     class Meta:
-#         model = UserProfile
-#         fields ['interest', 'accomodation', 'about']
+class UpdateProfile(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['interests', 'accomodation', 'about', 'profile_image']
