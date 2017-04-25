@@ -1,8 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django import forms
 from .models import UserProfile, HostRegistration
-
+from django import forms
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
@@ -22,3 +21,14 @@ class UpdateProfile(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['interests', 'accomodation', 'about', 'profile_image']
+        
+class UpdateEmail(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['email']
+        
+class UpdatePassword(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+    class Meta:
+        model = User
+        fields = ['password']
