@@ -31,7 +31,7 @@ import logging as LOG
 # Models
 from models import *
 from serializers import SnippetSerializer
-from forms import UserForm, HostForm, UpdateProfile
+from forms import UserForm, HostForm, UpdateProfile, UpdateEmail, UpdatePassword
 
 YELP_CONSUMER_KEY = '9PLzBaT21UbHC7MCS5eYkQ'
 YELP_CONSUMER_SECRET = 'I9NC-0JB2Mc7H6kHD_Y-D0Lqfuk'
@@ -187,6 +187,50 @@ def user_dashboard(request, username=None):
                'messages': messages,
                }
     return render(request, 'users/dashboard.html', context)
+    
+    
+#########################
+#     User Settings     #
+#########################
+    
+def user_settings(request):
+    user = request.user
+    if request.method == 'POST' and 'user_delete' in request.POST:
+        try:
+            u = user
+            u.delete()
+            logout(request)
+            return render(request, 'users/login.html')
+        except User.DoesNotExist:
+            return render(request, 'users/login.html')
+        except Exception as e:
+            return render(request, 'users/login.html', {'err': e.message})
+    elif request.method == 'POST' and 'user_update_email' in request.POST:
+        u = user
+        update_email = UpdateEmail(data=request.POST, instance = u)
+        if update_email.is_valid():
+            update_email.save()
+            return render(request, 'users/user_settings.html')
+    elif request.method == "POST" and "user_update_password" in request.POST:
+        u = user
+        username = request.POST.get(user)
+        password = request.POST.get('current_password')
+        # user = authenticate(username=username, password=password)
+        # if user:
+        update_password = UpdatePassword(data=request.POST, instance = u)
+        if update_password.is_valid():
+            user = update_password.save()
+            user.set_password(user.password)
+            user.save()
+            return render(request, 'users/user_settings.html')
+        # else:
+        #     return render(request, 'users/userpage.html')
+            
+    else:
+            return render(request, 'users/user_settings.html')
+        
+        
+    return render(request, 'users/user_settings.html')
 
 
 #########################

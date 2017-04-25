@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class='container-fluid'>
+            <h1>Settings for {{ user }}</h1>
+            <div class='row'>
+                <div class='col-md-4 col-lg-4'></div>
+                <div class='col-md-4 col-lg-4'>
+                    <form class='form-update' id='update_contact_info' method='POST' action'/user_settings/' enctype='multipart/form-data'>
+                        {% csrf_token %}
+                        {% load bootstrap %}
+                        <h2 class='page-header'>Contact Info</h2>
+                        <p>Current Email: {{ user.email }}</p>
+                        <p>New Email</p>
+                        <input type='email' class='form-control' name='email' for='update_contact_info'/>
+                        <input class='btn btn-info' type='submit' name='user_update_email' value='Update Email'/>
+                        
+                    </form>
+                    
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-4 col-lg-4'></div>
+                <div class=' col-md-4 col-lg-4'>
+                    <form class="form-update" id="update-password" method="post" action="/user_settings/" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% load bootstrap %}
+                        <h2 class='page-header'>Update Password</h2>
+                        Current Password
+                        <input type='password' class='form-control' name='current_password'  placeholder="Enter in current password..."/>
+                        <br/>
+                        New Password
+                        <input type='password' class='form-control' placeholder="Enter in new password..." />
+                        <br/>
+                        Re-type New Password
+                        <input type="password" name="password" class="form-control" placeholder="Re-Type New Password" value="" required>
+                        <br/>
+                        <input class='btn btn-info' type='submit' name='user_update_password' value='Change Password'/>
+                    </form>
+                </div>
+            </div>
+            <br/>
+            <div class='row'>
+                <div class='col-md-4 col-lg-4'></div>
+                <div class='col-md-4 col-lg-4 delete-box'>
+                    <form action="/user_settings/" id='delete_user' method="POST">
+                        {% csrf_token %}
+                        <h1 class='page-header text-center'>Delete Account</h1>
+                        <p>Note: Upon deleting your account, you will not be able to restore your old settings, 
+                        and you will need to create a new account if you wish to re-reigster for this service.</p>
+                        <div class='text-center'><button class='btn btn-danger' type="submit" name='user_delete' value='Delete_User'>Delete OpenStay Account</button></div>
+                        <br/>
+                    </form>
+                </div>
+            </div>
+            
+            <hr/>
+        </div>
+    {% endif %}
+{% endblock %}
