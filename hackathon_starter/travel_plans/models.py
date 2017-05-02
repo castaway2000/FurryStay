@@ -4,6 +4,7 @@ from users.models import HostRegistration
 
 
 class LocationVisit(models.Model):
+    objects = models.Manager()
     user = models.ForeignKey(User)
     location = models.ForeignKey(HostRegistration, on_delete=models.CASCADE)
     date_start = models.DateField()

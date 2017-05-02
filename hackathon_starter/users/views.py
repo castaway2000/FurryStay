@@ -127,7 +127,7 @@ def edit_userpage(request):
         username = user.username
         try:
             print 'try'
-            profile = UserProfile.objects.get(user=user.id)
+            profile = UserProfile.objects.get(user_id=user.id)
             print profile
             interests = profile.interests
             accomodation = profile.accomodation
@@ -138,8 +138,10 @@ def edit_userpage(request):
             accomodation = 'accomodation'
             about  = 'about'
         if request.method == 'POST':
-            print 'POST'
+            print user.id
+            
             profileID = UserProfile.objects.get(user_id=user.id)
+            print profileID
             profile_form = UpdateProfile(request.POST, request.FILES, instance=profileID)
             if profile_form.is_valid():
                 instance = profile_form.save(commit=False)
@@ -270,6 +272,8 @@ def register(request):
         user = authenticate(username=username, password=password)
         if user.is_authenticated:
             login(request, user)
+            profile = UserProfile(user_id=user.id)
+            profile.save()
             return HttpResponseRedirect('../chooser')
         else:
             raise Exception("user is not authenticated")

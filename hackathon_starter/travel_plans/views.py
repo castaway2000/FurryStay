@@ -19,22 +19,21 @@ def search(request):
         kwargs = dict()
 
         if data.get("location"):
-            kwargs["location__city"] = data.get("location")
+            print True
+            kwargs["city"] = data.get("location")
 
-        if data.get("date_start"):
-            kwargs["date_start__gte"]=datetime.datetime.strptime(data.get("date_start"), "%d-%b-%Y").date()
-        # else:
-        #     kwargs["date_start__gte"] = datetime.datetime.today().date()
+        # if data.get("date_start"):
+        #     print True
+        #     kwargs["date_start__gte"]=datetime.datetime.strptime(data.get("date_start"), "%d-%b-%Y").date()
+        # # else:
+        # #     kwargs["date_start__gte"] = datetime.datetime.today().date()
 
-        if data.get("date_end"):
-            kwargs["date_end__lte"]=datetime.datetime.strptime(data.get("date_end"), "%d-%b-%Y").date()
+        # if data.get("date_end"):
+        #     print True
+        #     kwargs["date_end__lte"]=datetime.datetime.strptime(data.get("date_end"), "%d-%b-%Y").date()
     
         location_visits = HostRegistration.objects.filter(**kwargs)\
-            .values("city", "user__username")#, "date_start", "date_end", "user__username", "user__email")
-
-            # .values("city, user__username")
-        # location_visits = LocationVisit.objects.filter(**kwargs)\
-
+            .values("city", "user__username")#, "user__username", "user__email")
         print (kwargs)
         print (location_visits)
 

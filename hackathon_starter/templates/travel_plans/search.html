@@ -12,18 +12,18 @@
 			<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
                 {% if location_visits %}
                     {% for location_visit in location_visits %}
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="results-item">
-                                    <h4>{{ location_visit.city }}</h4>
-                                    <p>
-                                    </p>
-                                    <a href="{% url 'userpage' location_visit.user__username %}">
-                                            {{ location_visit.user__username }}
-                                    </a>
+                        <a href="{% url 'userpage' location_visit.user__username %}">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="results-item">
+                                        <h4>{{ location_visit.user__username }}</h4>
+                                        <p>
+                                        </p>
+                                            {{ location_visit.city }}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     {% endfor %}
                 {% else %}
                     <div class="no-search-results">
