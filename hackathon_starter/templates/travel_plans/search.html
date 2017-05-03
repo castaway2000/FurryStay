@@ -11,15 +11,19 @@
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
                 {% if location_visits %}
-                    {% for location_visit in location_visits %}
-                        <a href="{% url 'userpage' location_visit.user__username %}">
+                    {% for profile in profiles %}
+                        <a href="{% url 'userpage' profile.username %}">
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <div class="results-item">
-                                        <h4>{{ location_visit.user__username }}</h4>
+                                        <img src="{{ profile.image }}" style="height: 80px; width: 80px;"></img>
+
+                                        <h4>{{ profile.username}}</h4>
                                         <p>
                                         </p>
-                                            {{ location_visit.city }}
+                                            {{ profile.city}}
+                                            <br/>
+                                            {{ profile.interests}}
                                     </div>
                                 </div>
                             </div>
