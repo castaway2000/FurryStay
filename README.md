@@ -1,5 +1,6 @@
-# OpenStay
- OpenStay uses the hackathon boilerplate
+# FurryStay
+ Furrystay uses OpenStay an OpenSource platform written by me and in conjunction with the hackathon starter kit.
+ OpenStay partially uses the hackathon boilerplate
  https://github.com/DrkSephy/django-hackathon-starter
 
 
