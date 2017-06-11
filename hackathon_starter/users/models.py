@@ -34,9 +34,12 @@ class UserProfile(models.Model):
     # This line is required. Links UserProfile to a User model instance.
     objects = models.Manager()
     user = models.OneToOneField(User)
-    profile_image = models.ImageField(upload_to = 'img/userpics/', default = 'img/userpics/default_profile_picture.jpg')
+    profile_image = models.ImageField(upload_to='img/userpics/', default='img/userpics/default_profile_picture.jpg')
     interests = models.CharField(max_length=500)
     accomodation = models.CharField(max_length=500)
+    twitter = models.CharField(max_length=255)
+    facebook = models.CharField(max_length=255)
+    telegram = models.CharField(max_length=255)
     about = models.CharField(max_length=5000)
     # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):

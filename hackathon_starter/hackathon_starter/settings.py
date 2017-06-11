@@ -47,6 +47,8 @@ INSTALLED_APPS = (
     'django_nose',
     'rest_framework',
     'corsheaders',
+    'chat',
+    # 'django_evolution',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from .models import UserProfile, HostRegistration
 from django import forms
 
+
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
     class Meta:
@@ -20,13 +21,15 @@ class HostForm(forms.ModelForm):
 class UpdateProfile(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['interests', 'accomodation', 'about', 'profile_image']
-        
+        fields = ['interests', 'accomodation', 'about', 'profile_image', 'twitter', 'facebook', 'telegram']
+
+
 class UpdateEmail(forms.ModelForm):
     class Meta:
         model = User
         fields = ['email']
-        
+
+
 class UpdatePassword(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
     class Meta:
