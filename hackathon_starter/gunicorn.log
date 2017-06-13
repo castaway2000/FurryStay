@@ -1,0 +1,718 @@
+[2017-06-11 07:33:51 +0000] [12784] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7fe4a9384230>
+  errorlog: /home/ubuntu/test/hackathon_starter/gunicorn.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7fe4a937bed8>
+  pre_fork: <function pre_fork at 0x7fe4a93840c8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 1000
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 3
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7fe4a937bd70>
+  pre_exec: <function pre_exec at 0x7fe4a93847d0>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x7fe4a9389050>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7fe4a9384938>
+  post_request: <function post_request at 0x7fe4a9384a28>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7fe4a9384500>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /home/ubuntu/test/hackathon_starter
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x7fe4a937bc08>
+  post_worker_init: <function post_worker_init at 0x7fe4a9384398>
+  child_exit: <function child_exit at 0x7fe4a9384b90>
+  worker_exit: <function worker_exit at 0x7fe4a9384cf8>
+  paste: None
+  default_proc_name: hackathon_starter.wsgi:application
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x7fe4a9384668>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7fe4a9384e60>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-11 07:33:51 +0000] [12784] [INFO] Starting gunicorn 19.7.1
+[2017-06-11 07:33:51 +0000] [12784] [DEBUG] Arbiter booted
+[2017-06-11 07:33:51 +0000] [12784] [INFO] Listening at: http://127.0.0.1:8000 (12784)
+[2017-06-11 07:33:51 +0000] [12784] [INFO] Using worker: sync
+[2017-06-11 07:33:51 +0000] [12789] [INFO] Booting worker with pid: 12789
+[2017-06-11 07:33:51 +0000] [12790] [INFO] Booting worker with pid: 12790
+[2017-06-11 07:33:51 +0000] [12791] [INFO] Booting worker with pid: 12791
+[2017-06-11 07:33:51 +0000] [12784] [DEBUG] 3 workers
+[2017-06-11 07:40:35 +0000] [13080] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7fb7ed8c2230>
+  errorlog: /home/ubuntu/test/hackathon_starter/gunicorn.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7fb7ed8b9ed8>
+  pre_fork: <function pre_fork at 0x7fb7ed8c20c8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 1000
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 3
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7fb7ed8b9d70>
+  pre_exec: <function pre_exec at 0x7fb7ed8c27d0>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x7fb7ed8c8050>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7fb7ed8c2938>
+  post_request: <function post_request at 0x7fb7ed8c2a28>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7fb7ed8c2500>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /home/ubuntu/test/hackathon_starter
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x7fb7ed8b9c08>
+  post_worker_init: <function post_worker_init at 0x7fb7ed8c2398>
+  child_exit: <function child_exit at 0x7fb7ed8c2b90>
+  worker_exit: <function worker_exit at 0x7fb7ed8c2cf8>
+  paste: None
+  default_proc_name: hackathon_starter.wsgi:application
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x7fb7ed8c2668>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7fb7ed8c2e60>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-11 07:40:35 +0000] [13080] [INFO] Starting gunicorn 19.7.1
+[2017-06-11 07:40:35 +0000] [13080] [DEBUG] Arbiter booted
+[2017-06-11 07:40:35 +0000] [13080] [INFO] Listening at: http://127.0.0.1:8000 (13080)
+[2017-06-11 07:40:35 +0000] [13080] [INFO] Using worker: sync
+[2017-06-11 07:40:35 +0000] [13085] [INFO] Booting worker with pid: 13085
+[2017-06-11 07:40:35 +0000] [13086] [INFO] Booting worker with pid: 13086
+[2017-06-11 07:40:35 +0000] [13087] [INFO] Booting worker with pid: 13087
+[2017-06-11 07:40:35 +0000] [13080] [DEBUG] 3 workers
+[2017-06-11 07:41:46 +0000] [13142] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7f8ac06a4230>
+  errorlog: /home/ubuntu/test/hackathon_starter/gunicorn.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7f8ac069bed8>
+  pre_fork: <function pre_fork at 0x7f8ac06a40c8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 1000
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 3
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7f8ac069bd70>
+  pre_exec: <function pre_exec at 0x7f8ac06a47d0>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x7f8ac06aa050>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7f8ac06a4938>
+  post_request: <function post_request at 0x7f8ac06a4a28>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7f8ac06a4500>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /home/ubuntu/test/hackathon_starter
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x7f8ac069bc08>
+  post_worker_init: <function post_worker_init at 0x7f8ac06a4398>
+  child_exit: <function child_exit at 0x7f8ac06a4b90>
+  worker_exit: <function worker_exit at 0x7f8ac06a4cf8>
+  paste: None
+  default_proc_name: hackathon_starter.wsgi:application
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x7f8ac06a4668>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7f8ac06a4e60>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-11 07:41:46 +0000] [13142] [INFO] Starting gunicorn 19.7.1
+[2017-06-11 07:41:46 +0000] [13142] [DEBUG] Arbiter booted
+[2017-06-11 07:41:46 +0000] [13142] [INFO] Listening at: http://127.0.0.1:8000 (13142)
+[2017-06-11 07:41:46 +0000] [13142] [INFO] Using worker: sync
+[2017-06-11 07:41:46 +0000] [13147] [INFO] Booting worker with pid: 13147
+[2017-06-11 07:41:46 +0000] [13148] [INFO] Booting worker with pid: 13148
+[2017-06-11 07:41:46 +0000] [13149] [INFO] Booting worker with pid: 13149
+[2017-06-11 07:41:46 +0000] [13142] [DEBUG] 3 workers
+[2017-06-11 07:42:55 +0000] [13166] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7f88c4e9c230>
+  errorlog: /home/ubuntu/test/hackathon_starter/gunicorn.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7f88c4e93ed8>
+  pre_fork: <function pre_fork at 0x7f88c4e9c0c8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 1000
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 3
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7f88c4e93d70>
+  pre_exec: <function pre_exec at 0x7f88c4e9c7d0>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x7f88c4ea2050>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7f88c4e9c938>
+  post_request: <function post_request at 0x7f88c4e9ca28>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7f88c4e9c500>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /home/ubuntu/test/hackathon_starter
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x7f88c4e93c08>
+  post_worker_init: <function post_worker_init at 0x7f88c4e9c398>
+  child_exit: <function child_exit at 0x7f88c4e9cb90>
+  worker_exit: <function worker_exit at 0x7f88c4e9ccf8>
+  paste: None
+  default_proc_name: hackathon_starter.wsgi:application
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x7f88c4e9c668>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7f88c4e9ce60>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-11 07:42:55 +0000] [13166] [INFO] Starting gunicorn 19.7.1
+[2017-06-11 07:42:55 +0000] [13166] [DEBUG] Arbiter booted
+[2017-06-11 07:42:55 +0000] [13166] [INFO] Listening at: http://127.0.0.1:8000 (13166)
+[2017-06-11 07:42:55 +0000] [13166] [INFO] Using worker: sync
+[2017-06-11 07:42:55 +0000] [13171] [INFO] Booting worker with pid: 13171
+[2017-06-11 07:42:55 +0000] [13172] [INFO] Booting worker with pid: 13172
+[2017-06-11 07:42:55 +0000] [13173] [INFO] Booting worker with pid: 13173
+[2017-06-11 07:42:55 +0000] [13166] [DEBUG] 3 workers
+[2017-06-11 07:42:59 +0000] [13176] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7f5dec492230>
+  errorlog: /home/ubuntu/test/hackathon_starter/gunicorn.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7f5dec489ed8>
+  pre_fork: <function pre_fork at 0x7f5dec4920c8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 3
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7f5dec489d70>
+  pre_exec: <function pre_exec at 0x7f5dec4927d0>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x7f5dec497050>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7f5dec492938>
+  post_request: <function post_request at 0x7f5dec492a28>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7f5dec492500>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /home/ubuntu/test/hackathon_starter
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x7f5dec489c08>
+  post_worker_init: <function post_worker_init at 0x7f5dec492398>
+  child_exit: <function child_exit at 0x7f5dec492b90>
+  worker_exit: <function worker_exit at 0x7f5dec492cf8>
+  paste: None
+  default_proc_name: hackathon_starter.wsgi:application
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x7f5dec492668>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7f5dec492e60>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-11 07:42:59 +0000] [13176] [INFO] Starting gunicorn 19.7.1
+[2017-06-11 07:42:59 +0000] [13176] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2017-06-11 07:42:59 +0000] [13176] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2017-06-11 07:42:59 +0000] [13176] [ERROR] Retrying in 1 second.
+[2017-06-11 07:43:00 +0000] [13176] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2017-06-11 07:43:00 +0000] [13176] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2017-06-11 07:43:00 +0000] [13176] [ERROR] Retrying in 1 second.
+[2017-06-11 07:43:01 +0000] [13176] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2017-06-11 07:43:01 +0000] [13176] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2017-06-11 07:43:01 +0000] [13176] [ERROR] Retrying in 1 second.
+[2017-06-11 07:43:02 +0000] [13176] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2017-06-11 07:43:02 +0000] [13176] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2017-06-11 07:43:02 +0000] [13176] [ERROR] Retrying in 1 second.
+[2017-06-11 07:43:03 +0000] [13176] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2017-06-11 07:43:03 +0000] [13176] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2017-06-11 07:43:03 +0000] [13176] [ERROR] Retrying in 1 second.
+[2017-06-11 07:43:04 +0000] [13176] [ERROR] Can't connect to ('127.0.0.1', 8000)
+[2017-06-11 07:43:30 +0000] [13186] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7f630ec4d230>
+  errorlog: /home/ubuntu/test/hackathon_starter/gunicorn.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7f630ec44ed8>
+  pre_fork: <function pre_fork at 0x7f630ec4d0c8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 3
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7f630ec44d70>
+  pre_exec: <function pre_exec at 0x7f630ec4d7d0>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x7f630ec52050>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7f630ec4d938>
+  post_request: <function post_request at 0x7f630ec4da28>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7f630ec4d500>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /home/ubuntu/test/hackathon_starter
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x7f630ec44c08>
+  post_worker_init: <function post_worker_init at 0x7f630ec4d398>
+  child_exit: <function child_exit at 0x7f630ec4db90>
+  worker_exit: <function worker_exit at 0x7f630ec4dcf8>
+  paste: None
+  default_proc_name: hackathon_starter.wsgi:application
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x7f630ec4d668>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7f630ec4de60>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-11 07:43:30 +0000] [13186] [INFO] Starting gunicorn 19.7.1
+[2017-06-11 07:43:30 +0000] [13186] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2017-06-11 07:43:30 +0000] [13186] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2017-06-11 07:43:30 +0000] [13186] [ERROR] Retrying in 1 second.
+[2017-06-11 07:43:31 +0000] [13186] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2017-06-11 07:43:31 +0000] [13186] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2017-06-11 07:43:31 +0000] [13186] [ERROR] Retrying in 1 second.
+[2017-06-11 07:43:32 +0000] [13186] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2017-06-11 07:43:32 +0000] [13186] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2017-06-11 07:43:32 +0000] [13186] [ERROR] Retrying in 1 second.
+[2017-06-11 07:43:33 +0000] [13186] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2017-06-11 07:43:33 +0000] [13186] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2017-06-11 07:43:33 +0000] [13186] [ERROR] Retrying in 1 second.
+[2017-06-11 07:43:34 +0000] [13186] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2017-06-11 07:43:34 +0000] [13186] [DEBUG] connection to ('127.0.0.1', 8000) failed: [Errno 98] Address already in use
+[2017-06-11 07:43:34 +0000] [13186] [ERROR] Retrying in 1 second.
+[2017-06-11 07:43:35 +0000] [13186] [ERROR] Can't connect to ('127.0.0.1', 8000)
+[2017-06-11 07:44:22 +0000] [12791] [INFO] Parent changed, shutting down: <Worker 12791>
+[2017-06-11 07:44:22 +0000] [12791] [INFO] Worker exiting (pid: 12791)
+[2017-06-11 07:44:22 +0000] [12789] [INFO] Parent changed, shutting down: <Worker 12789>
+[2017-06-11 07:44:22 +0000] [12789] [INFO] Worker exiting (pid: 12789)
+[2017-06-11 07:44:22 +0000] [12790] [INFO] Parent changed, shutting down: <Worker 12790>
+[2017-06-11 07:44:22 +0000] [12790] [INFO] Worker exiting (pid: 12790)
+[2017-06-11 07:45:06 +0000] [13087] [INFO] Parent changed, shutting down: <Worker 13087>
+[2017-06-11 07:45:06 +0000] [13087] [INFO] Worker exiting (pid: 13087)
+[2017-06-11 07:45:06 +0000] [13086] [INFO] Parent changed, shutting down: <Worker 13086>
+[2017-06-11 07:45:06 +0000] [13086] [INFO] Worker exiting (pid: 13086)
+[2017-06-11 07:46:22 +0000] [13222] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7fcea1219230>
+  errorlog: /home/ubuntu/test/hackathon_starter/gunicorn.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7fcea1210ed8>
+  pre_fork: <function pre_fork at 0x7fcea12190c8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 3
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7fcea1210d70>
+  pre_exec: <function pre_exec at 0x7fcea12197d0>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x7fcea121e050>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7fcea1219938>
+  post_request: <function post_request at 0x7fcea1219a28>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7fcea1219500>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /home/ubuntu/test/hackathon_starter
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x7fcea1210c08>
+  post_worker_init: <function post_worker_init at 0x7fcea1219398>
+  child_exit: <function child_exit at 0x7fcea1219b90>
+  worker_exit: <function worker_exit at 0x7fcea1219cf8>
+  paste: None
+  default_proc_name: hackathon_starter.wsgi:application
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x7fcea1219668>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7fcea1219e60>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-11 07:46:22 +0000] [13222] [INFO] Starting gunicorn 19.7.1
+[2017-06-11 07:46:22 +0000] [13222] [DEBUG] Arbiter booted
+[2017-06-11 07:46:22 +0000] [13222] [INFO] Listening at: http://127.0.0.1:8000 (13222)
+[2017-06-11 07:46:22 +0000] [13222] [INFO] Using worker: sync
+[2017-06-11 07:46:22 +0000] [13227] [INFO] Booting worker with pid: 13227
+[2017-06-11 07:46:22 +0000] [13228] [INFO] Booting worker with pid: 13228
+[2017-06-11 07:46:22 +0000] [13229] [INFO] Booting worker with pid: 13229
+[2017-06-11 07:46:22 +0000] [13222] [DEBUG] 3 workers
+[2017-06-11 07:48:28 +0000] [13252] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7f329438e230>
+  errorlog: /home/ubuntu/test/hackathon_starter/gunicorn.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7f3294385ed8>
+  pre_fork: <function pre_fork at 0x7f329438e0c8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 3
+  proc_name: None
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7f3294385d70>
+  pre_exec: <function pre_exec at 0x7f329438e7d0>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x7f3294393050>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7f329438e938>
+  post_request: <function post_request at 0x7f329438ea28>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7f329438e500>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /home/ubuntu/test/hackathon_starter
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x7f3294385c08>
+  post_worker_init: <function post_worker_init at 0x7f329438e398>
+  child_exit: <function child_exit at 0x7f329438eb90>
+  worker_exit: <function worker_exit at 0x7f329438ecf8>
+  paste: None
+  default_proc_name: hackathon_starter.wsgi:application
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x7f329438e668>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7f329438ee60>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2017-06-11 07:48:28 +0000] [13252] [INFO] Starting gunicorn 19.7.1
+[2017-06-11 07:48:28 +0000] [13252] [DEBUG] Arbiter booted
+[2017-06-11 07:48:28 +0000] [13252] [INFO] Listening at: http://127.0.0.1:8000 (13252)
+[2017-06-11 07:48:28 +0000] [13252] [INFO] Using worker: sync
+[2017-06-11 07:48:28 +0000] [13257] [INFO] Booting worker with pid: 13257
+[2017-06-11 07:48:28 +0000] [13258] [INFO] Booting worker with pid: 13258
+[2017-06-11 07:48:28 +0000] [13259] [INFO] Booting worker with pid: 13259
+[2017-06-11 07:48:28 +0000] [13252] [DEBUG] 3 workers
+[2017-06-11 07:59:14 +0000] [13259] [INFO] Parent changed, shutting down: <Worker 13259>
+[2017-06-11 07:59:14 +0000] [13259] [INFO] Worker exiting (pid: 13259)
