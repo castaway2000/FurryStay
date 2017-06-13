@@ -2027,3 +2027,141 @@ FILES:  <MultiValueDict: {u'image': [<InMemoryUploadedFile: IMG_2639.JPG (ima[12
 [13/Jun/2017 02:03:15] "GET / HTTP/1.1" 200 9263
 [13/Jun/2017 02:03:15] "GET /contact/ HTTP/1.1" 200 6466
 [13/Jun/2017 04:30:29] "GET / HTTP/1.1" 200 9263
+[13/Jun/2017 05:13:45] "GET / HTTP/1.1" 200 9263
+[13/Jun/2017 05:13:45] "GET /contact/ HTTP/1.1" 200 6466
+[13/Jun/2017 06:12:59] "GET / HTTP/1.1" 200 9263
+[13/Jun/2017 06:51:31] "GET /userpage/ HTTP/1.1" 200 16009
+[13/Jun/2017 06:51:31] "GET /static/bower_components/jquery/dist/jquery.js HTTP/1.1" 304 0
+[13/Jun/2017 06:51:31] "GET /static/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js HTTP/1.1" 304 0
+[13/Jun/2017 06:51:31] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 304 0
+[13/Jun/2017 06:51:31] "GET /static/bower_components/moment/min/moment.min.js HTTP/1.1" 304 0
+[13/Jun/2017 06:51:32] "GET /static/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css HTTP/1.1" 304 0
+[13/Jun/2017 06:51:32] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 304 0
+[13/Jun/2017 06:51:32] "GET /static/css/style.css HTTP/1.1" 304 0
+[13/Jun/2017 06:51:32] "GET /static/bower_components/bootstrap-social/bootstrap-social.css HTTP/1.1" 304 0
+[13/Jun/2017 06:51:32] "GET /static/bower_components/d3/d3.min.js HTTP/1.1" 304 0
+[13/Jun/2017 06:51:32] "GET /media/img/userpics/IMG_2639.JPG HTTP/1.1" 304 0
+[13/Jun/2017 06:51:33] "GET /static/static_dev/img/favicon.ico HTTP/1.1" 404 1685
+ge/jpeg)>]}>
+10
+is anon
+1
+outside
+is authed
+try
+Bayer
+outside
+is authed
+try
+Bayer
+10
+Bayer
+instance <tr><th><label for="id_interests">Interests:</label></th><td><input id="id_interests" maxlength="500" name="interests" type="text" value="Fursuits, travel, board/card games, ocean/beach trips, COFFEE" /></td></tr>
+<tr><th><label for="id_accomodation">Accomodation:</label></th><td><input id="id_accomodation" maxlength="500" name="accomodation" type="text" value="Shared large bed (snugs are encouraged :3)" /></td></tr>
+<tr><th><label for="id_about">About:</label></th><td><input id="id_about" maxlength="5000" name="about" type="text" value="Awoo! I love meeting new people and if you&#39;re looking to tour about London a bit then my family home is a short train ride to the city, making it an idea stop off point. Make sure to time your trip with a Londonfurs meet! 
+
+I don&#39;t have much in the way of bed accommodation. Just a roomy double bed or a couch to crash on. I generally don&#39;t mind sharing and always like to cuddle with friendly folk. :3 
+
+Feel free to contact me! " /></td></tr>
+<tr><th><label for="id_profile_image">Profile image:</label></th><td>Currently: <a href="/media/img/userpics/IMG_2639.JPG">img/userpics/IMG_2639.JPG</a> <br />Change: <input id="id_profile_image" name="profile_image" type="file" /></td></tr>
+<tr><th><label for="id_twitter">Twitter:</label></th><td><input id="id_twitter" maxlength="255" name="twitter" type="text" value="BayerShep" /></td></tr>
+<tr><th><label for="id_facebook">Facebook:</label></th><td><input id="id_facebook" maxlength="255" name="facebook" type="text" value="courtney.swain.391" /></td></tr>
+<tr><th><label for="id_telegram">Telegram:</label></th><td><input id="id_telegram" maxlength="255" name="telegram" type="text" value="Swainy" /></td></tr>
+FILES:  <MultiValueDict: {}>
+10
+is anon
+1
+10
+is anon
+1
+index: AnonymousUser
+index: AnonymousUser
+index: AnonymousUser
+index: AnonymousUser
+index: AnonymousUser
+index: AnonymousUser
+10
+is anon
+1
+[13/Jun/2017 07:06:30] "GET / HTTP/1.1" 200 9866
+[13/Jun/2017 07:06:30] "GET /static/bower_components/moment/min/moment.min.js HTTP/1.1" 304 0
+[13/Jun/2017 07:06:30] "GET /static/bower_components/jquery/dist/jquery.js HTTP/1.1" 304 0
+[13/Jun/2017 07:06:30] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 304 0
+[13/Jun/2017 07:06:30] "GET /static/bower_components/d3/d3.min.js HTTP/1.1" 304 0
+[13/Jun/2017 07:06:30] "GET /static/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js HTTP/1.1" 304 0
+[13/Jun/2017 07:06:30] "GET /static/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css HTTP/1.1" 304 0
+[13/Jun/2017 07:06:30] "GET /static/bower_components/bootstrap-social/bootstrap-social.css HTTP/1.1" 304 0
+[13/Jun/2017 07:06:30] "GET /static/css/style.css HTTP/1.1" 304 0
+[13/Jun/2017 07:06:30] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 304 0
+[13/Jun/2017 07:06:33] "GET /logout/ HTTP/1.1" 302 0
+[13/Jun/2017 07:06:33] "GET / HTTP/1.1" 200 9263
+[13/Jun/2017 07:06:35] "GET /login/ HTTP/1.1" 500 223229
+[13/Jun/2017 07:06:35] "GET /favicon.ico HTTP/1.1" 404 6832
+[13/Jun/2017 07:06:53] "GET / HTTP/1.1" 200 9263
+[13/Jun/2017 07:08:05] "POST /search/ HTTP/1.1" 200 10895
+[13/Jun/2017 07:08:05] "GET /media/img/userpics/default_profile_picture.jpg HTTP/1.1" 200 38439
+[13/Jun/2017 07:08:05] "GET /media/img/userpics/2500x1500.jpg HTTP/1.1" 200 140009
+[13/Jun/2017 07:08:05] "GET /media/img/userpics/photo_2017-06-09_15-45-12.jpg HTTP/1.1" 200 200272
+[13/Jun/2017 07:08:06] "GET /media/img/userpics/IMG_2639.JPG HTTP/1.1" 200 1052979
+[13/Jun/2017 07:11:41] "GET /login/ HTTP/1.1" 500 223257
+[13/Jun/2017 07:17:23] "GET /userpage/lace22/ HTTP/1.1" 200 15026
+[13/Jun/2017 07:19:10] "GET /login/ HTTP/1.1" 500 217608
+[13/Jun/2017 07:19:33] "GET /login/ HTTP/1.1" 500 223495
+[13/Jun/2017 07:20:50] "GET /login/ HTTP/1.1" 200 7168
+[13/Jun/2017 07:20:51] "GET /users/registration/password_reset HTTP/1.1" 404 6898
+[13/Jun/2017 07:21:31] "GET /users/registration/password_reset HTTP/1.1" 404 6898
+[13/Jun/2017 07:21:35] "GET /users/registration/password_reset HTTP/1.1" 404 6898
+[13/Jun/2017 07:25:00] "GET /users/registration/password_reset HTTP/1.1" 404 6898
+[13/Jun/2017 07:25:08] "GET /users/registration/password_reset HTTP/1.1" 404 6898
+[13/Jun/2017 07:35:01] "GET /users/registration/password_reset HTTP/1.1" 200 6580
+[13/Jun/2017 07:42:23] "GET / HTTP/1.1" 200 9263
+[13/Jun/2017 08:09:30] "GET / HTTP/1.1" 200 9263
+Performing system checks...
+
+System check identified no issues (0 silenced).
+June 13, 2017 - 07:34:53
+Django version 1.7.6, using settings 'hackathon_starter.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+index: AnonymousUser
+index: AnonymousUser
+Performing system checks...
+
+System check identified no issues (0 silenced).
+June 13, 2017 - 08:58:58
+Django version 1.7.6, using settings 'hackathon_starter.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+[13/Jun/2017 09:05:18] "POST /users/registration/password_reset HTTP/1.1" 302 0
+[13/Jun/2017 09:05:19] "GET /users/password/reset/done/ HTTP/1.1" 200 6286
+[13/Jun/2017 09:07:03] "POST /search/ HTTP/1.1" 200 10895
+[13/Jun/2017 09:07:04] "GET /media/img/userpics/IMG_2639.JPG HTTP/1.1" 304 0
+[13/Jun/2017 09:07:11] "GET /userpage/Bayer/ HTTP/1.1" 200 15503
+[13/Jun/2017 09:07:26] "GET / HTTP/1.1" 200 9263
+[13/Jun/2017 09:08:21] "POST /search/ HTTP/1.1" 200 10895
+[13/Jun/2017 09:08:40] "GET /userpage/AlexGoldenclaw/ HTTP/1.1" 200 15053
+[13/Jun/2017 09:09:01] "GET /userpage/ShishaSheppy/ HTTP/1.1" 200 16091
+[13/Jun/2017 09:09:04] "GET / HTTP/1.1" 200 9263
+[13/Jun/2017 09:18:24] "GET /userpage/blazecollie/ HTTP/1.1" 200 15528
+[13/Jun/2017 09:18:25] "GET /static/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js HTTP/1.1" 404 172
+[13/Jun/2017 09:18:25] "GET /static/bower_components/jquery/dist/jquery.js HTTP/1.1" 404 119
+[13/Jun/2017 09:18:25] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 404 123
+[13/Jun/2017 09:18:25] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 404 135
+[13/Jun/2017 09:18:26] "GET /static/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css HTTP/1.1" 404 174
+[13/Jun/2017 09:18:26] "GET /static/bower_components/bootstrap-social/bootstrap-social.css HTTP/1.1" 404 135
+[13/Jun/2017 09:18:26] "GET /static/css/style.css HTTP/1.1" 404 94
+[13/Jun/2017 09:18:26] "GET /static/bower_components/d3/d3.min.js HTTP/1.1" 404 110
+[13/Jun/2017 09:18:26] "GET /media/img/userpics/2500x1500.jpg HTTP/1.1" 200 140009
+[13/Jun/2017 09:18:28] "GET /static/bower_components/moment/min/moment.min.js HTTP/1.1" 404 122
+[13/Jun/2017 09:18:34] "GET /userpage/blazecollie/ HTTP/1.1" 200 15528
+[13/Jun/2017 09:18:34] "GET /userpage/blazecollie/ HTTP/1.1" 200 15528
+[13/Jun/2017 09:18:35] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 404 123
+[13/Jun/2017 09:18:35] "GET /static/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js HTTP/1.1" 404 172
+[13/Jun/2017 09:18:35] "GET /static/bower_components/moment/min/moment.min.js HTTP/1.1" 404 122
+[13/Jun/2017 09:18:35] "GET /static/bower_components/jquery/dist/jquery.js HTTP/1.1" 404 119
+[13/Jun/2017 09:18:35] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 404 135
+[13/Jun/2017 09:18:35] "GET /static/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css HTTP/1.1" 404 174
+[13/Jun/2017 09:18:35] "GET /static/bower_components/bootstrap-social/bootstrap-social.css HTTP/1.1" 404 135
+[13/Jun/2017 09:18:35] "GET /static/css/style.css HTTP/1.1" 404 94
+[13/Jun/2017 09:18:36] "GET /static/bower_components/d3/d3.min.js HTTP/1.1" 404 110
+[13/Jun/2017 09:18:36] "GET /media/img/userpics/2500x1500.jpg HTTP/1.1" 200 140009

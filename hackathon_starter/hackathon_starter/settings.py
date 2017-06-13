@@ -20,9 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'keuhh=0*%do-ayvy*m2k=vss*$7)j8q!@u0+d^na7mi2(^!l!d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -74,14 +74,14 @@ WSGI_APPLICATION = 'hackathon_starter.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': get_env_variable('DATABASE_NAME'),
-        # 'USER': get_env_variable('DATABASE_USER'),
-        # 'PASSWORD': get_env_variable('DATABASE_PASSWORD'),
-        # 'HOST': '',
-        # 'PORT': '',
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': get_env_variable('DATABASE_NAME'),
+         'USER': get_env_variable('DATABASE_USER'),
+         'PASSWORD': get_env_variable('DATABASE_PASSWORD'),
+         'HOST': '',
+         'PORT': '',
     }
 }
 
@@ -191,3 +191,11 @@ if DEBUG:
     EMAIL_HOST_PASSWORD = ''
     EMAIL_USE_TLS = False
     DEFAULT_FROM_EMAIL = 'testing@example.com'
+else:
+    EMAIL_HOST = 'localhost'
+    EMAIL_PORT = 25
+    EMAIL_HOST_USER = ''
+    EMAIL_HOST_PASSWORD = ''
+    EMAIL_USE_TLS = False
+    DEFAULT_FROM_EMAIL = 'contact@furrystay.com'
+
